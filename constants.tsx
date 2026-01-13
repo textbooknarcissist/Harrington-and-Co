@@ -22,21 +22,21 @@ export const LAWYERS: Lawyer[] = [
     id: '1',
     name: 'Emuobonuvie Udi',
     role: 'Partner',
-    phone: '+234 818 050 0656',
+    phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
   },
   {
     id: '2',
     name: 'Favour Nwadibie',
     role: 'Partner',
-    phone: '+234 806 493 6802',
+    phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
   },
   {
     id: '3',
     name: 'Gilbert Origbu',
     role: 'Managing Partner',
-    phone: '+234 814 977 0303',
+    phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
   }
 ];
@@ -83,15 +83,31 @@ export const PRACTICE_AREAS: PracticeArea[] = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
-    name: 'Chief Joel Ihekwuaba',
-    role: 'Abuja',
-    content: 'Greyline Partners handled my tenancy matter with intelligence, promptness and professionalism. Their intervention produced immediate positive results, with tenants settling outstanding rent arrears and committing to timely payment. I commend the firm and wish them continued growth and success.',
+    name: 'James Harrison',
+    role: 'CEO, Global Dynamics',
+    content: 'Harrington and Co provided exceptional guidance during our corporate restructuring. Their professional approach and deep legal expertise were instrumental in our success.',
+    imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150',
   },
   {
     id: '2',
-    name: 'Queen Temitope',
-    role: 'CEO, Kavod Atelier',
-    content: 'Greyline partners are legal advisors to Kavod atelier and we must commend their precision, meticulousness and attention to details, helping us negotiate better contract conditions.',
+    name: 'Clara Sterling',
+    role: 'Director, Sterling Estates',
+    content: 'The level of precision and meticulous attention to detail at Harrington and Co is unmatched. They handled our complex real estate portfolio with absolute integrity.',
+    imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=150',
+  },
+  {
+    id: '3',
+    name: 'Robert Miller',
+    role: 'Managing Director, Oceanic Shipping',
+    content: 'A truly reliable firm. They navigated our maritime disputes with intelligence and efficiency. Highly recommended for any complex legal challenges.',
+    imageUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=150',
+  },
+  {
+    id: '4',
+    name: 'Arthur Kingsleigh',
+    role: 'Chairman, Kingsleigh Group',
+    content: 'Harrington and Co represents the pinnacle of legal advocacy. Their boardroom presence is commanding, and their strategic foresight has been indispensable to our international operations.',
+    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150',
   }
 ];
 

@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greyline Partners | Strategic Thinkers. Skilled Advocates.</title>
+  <title>Harrington and Co | Strategic Insight. Sophisticated Advocacy.</title>
+  <meta name="description" content="A premier law firm specializing in corporate, maritime, and intellectual property law with a global perspective.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,19 +14,22 @@
     body {
       font-family: 'Montserrat', sans-serif;
       scroll-behavior: smooth;
+      background-color: #F7F5F0;
+      color: #0F1E2E;
     }
     h1, h2, h3, h4, .serif {
       font-family: 'Playfair Display', serif;
+      color: #0F1E2E;
     }
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #1a2b23;
+      background: #0F1E2E;
     }
     ::-webkit-scrollbar-thumb {
-      background: #d4af37;
+      background: #C6A75E;
       border-radius: 4px;
     }
     /* Fade animations */
@@ -36,9 +40,16 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .brand-bg { background-color: #1a2b23; }
-    .brand-accent { color: #d4af37; }
-    .brand-accent-bg { background-color: #d4af37; }
+    .brand-bg { background-color: #0F1E2E; }
+    .brand-accent { color: #C6A75E; }
+    .brand-accent-bg { background-color: #C6A75E; }
+    .brand-ivory { background-color: #F7F5F0; }
+    
+    /* Selection highlight */
+    ::selection {
+      background: #C6A75E;
+      color: #0F1E2E;
+    }
   </style>
   <script type="importmap">
   {
@@ -51,7 +62,8 @@
   }
   </script>
 </head>
-<body class="bg-[#fdfcfb] text-[#1a2b23]">
+<body class="bg-[#F7F5F0] text-[#0F1E2E]">
   <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
 </body>
 </html>

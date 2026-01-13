@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import PracticeAreasPage from './pages/PracticeAreasPage';
 import BlogPage from './pages/BlogPage';
 import ContactPage from './pages/ContactPage';
+import BackToTop from './components/BackToTop';
 
 const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/');
@@ -45,6 +46,7 @@ const App: React.FC = () => {
         {renderPage()}
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };

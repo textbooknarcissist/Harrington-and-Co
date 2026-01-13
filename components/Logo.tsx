@@ -7,7 +7,7 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "w-10 h-10", light = false }) => {
-  const color = light ? "#ffffff" : "#d4af37";
+  const color = light ? "#F7F5F0" : "#C6A75E";
   return (
     <svg viewBox="0 0 100 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 95V105H90V95H10Z" fill={color} />

@@ -6,15 +6,17 @@ import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
 import ContactSection from '../components/ContactSection';
 import BlogPreview from '../components/BlogPreview';
+import PracticePreview from '../components/PracticePreview';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
       <AboutSection />
-      <Testimonials />
+      <PracticePreview />
       <BlogPreview />
       <ContactSection />
+      <Testimonials />
       <Newsletter />
     </>
   );
