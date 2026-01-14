@@ -1,35 +1,18 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
+import { FAQ_ITEMS } from '../constants';
 
-interface FAQItem {
-  question: string;
-  answer: string;
+interface FAQProps {
+  limit?: number;
 }
 
-const FAQ: React.FC = () => {
+const FAQ: React.FC<FAQProps> = ({ limit }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-  const faqs: FAQItem[] = [
-    {
-      question: "Does the firm handle international arbitration?",
-      answer: "Yes. Our Alternative Dispute Resolution team has represented domestic and international clients in high-stakes arbitrations across London, Paris, and Dubai jurisdictions, specialized in complex commercial and maritime treaties."
-    },
-    {
-      question: "What is the typical response time for urgent maritime matters?",
-      answer: "We operate an emergency response protocol for shipping and maritime emergencies. Clients have 24/7 access to specialized partners for arrest of vessels, collisions, or salvage inquiries, typically initiating within 60 minutes of contact."
-    },
-    {
-      question: "Do you offer specialized counsel for tech startups in the Fintech sector?",
-      answer: "Absolutely. Our 'Digital Sovereignty' practice group focuses on Nigerian Fintech regulations, CBN compliance, data privacy, and intellectual property protection for high-growth African technology ventures."
-    },
-    {
-      question: "How does the firm manage cross-border regulatory compliance?",
-      answer: "We leverage our established network across 24+ jurisdictions to provide synchronized legal auditing. This ensures your commercial operations remain compliant with both local Nigerian laws and international standards (GDPR, FCPA, etc.)."
-    }
-  ];
+  
+  const displayFaqs = limit ? FAQ_ITEMS.slice(0, limit) : FAQ_ITEMS;
 
   return (
-    <section className="py-24 bg-[#F7F5F0] border-y border-[#0F1E2E]/5">
+    <section className={`py-24 ${limit ? 'bg-[#F7F5F0]' : 'bg-transparent'} relative z-10`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0F1E2E] text-white rounded-full mb-6">
@@ -41,7 +24,7 @@ const FAQ: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, idx) => {
+          {displayFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div key={idx} className="border-b border-[#0F1E2E]/10 overflow-hidden">
@@ -72,6 +55,18 @@ const FAQ: React.FC = () => {
             );
           })}
         </div>
+
+        {limit && (
+          <div className="mt-12 text-center">
+            <a 
+              href="#/contact" 
+              className="inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-[#0F1E2E] hover:text-[#C6A75E] transition-colors group"
+            >
+              view all faqs
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-2" />
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

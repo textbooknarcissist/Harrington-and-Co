@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import Logo from '../components/Logo';
@@ -5,18 +6,27 @@ import Logo from '../components/Logo';
 const BlogPage: React.FC = () => {
   return (
     <div className="bg-[#F7F5F0]">
-      {/* Dark Hero Header */}
-      <section className="bg-[#0F1E2E] pt-40 pb-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-          <Logo className="w-[500px] h-[500px]" light={true} />
+      {/* Refined Hero Header - Unified with Homepage Style */}
+      <section className="relative pt-48 pb-32 overflow-hidden flex items-center justify-center text-center px-6">
+        {/* Background Image with Desaturated Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=2000" 
+            alt="Briefing Background"
+            className="w-full h-full object-cover object-center grayscale brightness-[0.3] scale-105"
+          />
+          <div className="absolute inset-0 bg-[#0F1E2E]/60 backdrop-blur-[2px]"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">The Briefing</span>
-          <h1 className="text-5xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <span className="text-[#C6A75E] font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-6 block animate-in fade-in slide-in-from-top-4 duration-1000">
+            The Briefing
+          </span>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#F7F5F0] mb-8 serif leading-[1.05] animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-150">
             Resources.
           </h1>
-          <div className="w-24 h-1 bg-[#C6A75E] mb-8 mx-auto"></div>
-          <p className="max-w-2xl text-xl text-[#F7F5F0]/70 font-light leading-relaxed mx-auto">
+          <div className="w-24 h-[1px] bg-[#C6A75E] mb-8 mx-auto animate-in fade-in zoom-in duration-1000 delay-300"></div>
+          <p className="max-w-2xl text-sm md:text-lg text-[#F7F5F0]/70 font-light leading-relaxed mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
             Strategic commentary on evolving regulations and the global commercial landscape.
           </p>
         </div>

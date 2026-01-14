@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { CheckCircle, Scale, Users, TrendingUp } from 'lucide-react';
 
+// --- CountUp Component (Remains same) ---
 const CountUp: React.FC<{ end: number; suffix?: string; prefix?: string }> = ({ end, suffix = "", prefix = "" }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef<HTMLDivElement>(null);
@@ -13,32 +14,69 @@ const CountUp: React.FC<{ end: number; suffix?: string; prefix?: string }> = ({ 
       },
       { threshold: 0.1 }
     );
-
     if (countRef.current) observer.observe(countRef.current);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     if (!hasStarted) return;
-    
     let startTimestamp: number | null = null;
     const duration = 2000;
-
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        window.requestAnimationFrame(step);
-      }
+      if (progress < 1) window.requestAnimationFrame(step);
     };
-
     window.requestAnimationFrame(step);
   }, [hasStarted, end]);
 
   return <span ref={countRef}>{prefix}{count.toLocaleString()}{suffix}</span>;
 };
 
+// --- NEW: Individual Stat Card Component ---
+// This isolates the hover state so only the specific card responds
+const StatCard = ({ stat }: { stat: any }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div 
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`p-10 rounded-2xl flex flex-col h-full border transition-all duration-500 ease-out ${
+        isHovered ? 'shadow-lg scale-[1.02]' : 'shadow-sm scale-100'
+      } ${
+        stat.dark 
+        ? 'bg-[#0F1E2E] text-[#F7F5F0] border-white/10' 
+        : 'bg-[#F2EFE8] text-[#0F1E2E] border-[#0F1E2E]/15'
+      }`}
+    >
+      <div className={`w-fit mb-12 transition-transform duration-700 ease-in-out ${
+        stat.dark ? 'text-[#C6A75E]' : 'text-[#0F1E2E]'
+      } ${isHovered ? '[transform:rotateY(360deg)]' : ''}`}>
+        {stat.icon}
+      </div>
+      
+      <div className="mt-auto">
+        <div className="text-4xl md:text-5xl font-bold serif mb-2">
+          <CountUp end={stat.value} suffix={stat.suffix} />
+        </div>
+        <div className={`text-[10px] font-bold tracking-widest uppercase mb-6 ${
+          stat.dark ? 'text-[#F7F5F0]/70' : 'text-[#0F1E2E]/60'
+        }`}>
+          {stat.label}
+        </div>
+        <p className={`text-xs font-light leading-relaxed ${
+          stat.dark ? 'text-[#F7F5F0]/40' : 'text-[#4A5568]'
+        }`}>
+          {stat.description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+// --- Main TrackRecord Component ---
 const TrackRecord: React.FC = () => {
   const stats = [
     {
@@ -86,30 +124,7 @@ const TrackRecord: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, idx) => (
-            <div 
-              key={idx}
-              className={`p-10 rounded-2xl flex flex-col h-full shadow-sm hover:shadow-lg transition-all duration-500 group border ${
-                stat.dark 
-                ? 'bg-[#0F1E2E] text-[#F7F5F0] border-white/10' 
-                : 'bg-[#F2EFE8] text-[#0F1E2E] border-[#0F1E2E]/15'
-              }`}
-            >
-              <div className={`w-fit ${stat.dark ? 'text-[#C6A75E]' : 'text-[#0F1E2E]'} mb-12 transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(360deg)]`}>
-                {stat.icon}
-              </div>
-              
-              <div className="mt-auto">
-                <div className="text-4xl md:text-5xl font-bold serif mb-2">
-                  <CountUp end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className={`text-[10px] font-bold tracking-widest uppercase mb-6 ${stat.dark ? 'text-[#F7F5F0]/70' : 'text-[#0F1E2E]/60'}`}>
-                  {stat.label}
-                </div>
-                <p className={`text-xs font-light leading-relaxed ${stat.dark ? 'text-[#F7F5F0]/40' : 'text-[#4A5568]'}`}>
-                  {stat.description}
-                </p>
-              </div>
-            </div>
+            <StatCard key={idx} stat={stat} />
           ))}
         </div>
       </div>

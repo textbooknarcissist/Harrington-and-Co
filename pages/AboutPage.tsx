@@ -1,30 +1,47 @@
 import React from 'react';
-import { ShieldCheck, Compass, Layers, Landmark, Instagram, Twitter, Linkedin } from 'lucide-react';
-import { LAWYERS } from '../constants';
-import Logo from '../components/Logo';
+import { ShieldCheck, Compass, Layers, Landmark, Instagram, Twitter, Linkedin, Target, Eye, Gem } from 'lucide-react';
 import TrackRecord from '../components/TrackRecord';
 
 const AboutPage: React.FC = () => {
   return (
     <div className="bg-[#F7F5F0]">
-      {/* Dark Header for Navbar Consistency */}
-      <section className="bg-[#0F1E2E] pt-40 pb-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-          <Logo className="w-[600px] h-[600px]" light={true} />
+      {/* Refined Hero Header - Aligned with Homepage Style */}
+      <section className="relative pt-56 pb-40 overflow-hidden flex flex-col items-center justify-center text-center px-6">
+        {/* Background Image with Desaturated Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=2000" 
+            alt="Library Architecture"
+            className="w-full h-full object-cover object-center grayscale brightness-[0.3] scale-105"
+          />
+          <div className="absolute inset-0 bg-[#0F1E2E]/60 backdrop-blur-[2px]"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left">
-          <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">About Us</span>
-          <h1 className="text-5xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
-            The Architecture <br /> of Justice.
+
+        <div className="max-w-6xl mx-auto relative z-10 -mt-24">
+          <div className="flex flex-col items-center mb-8 md:mb-12">
+            <span className="text-[#C6A75E] font-bold tracking-[0.6em] uppercase text-[10px] md:text-xs mb-4 animate-in fade-in slide-in-from-top-4 duration-1000">
+              Our Heritage
+            </span>
+            <div className="w-12 h-[1px] bg-[#C6A75E]/40"></div>
+          </div>
+          
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-150">
+            Defining the Standards <br className="hidden sm:block" /> of Global Advocacy.
           </h1>
-          <div className="w-24 h-1 bg-[#C6A75E] mb-8 mx-auto md:mx-0"></div>
-          <p className="max-w-2xl text-xl text-[#F7F5F0]/70 font-light leading-relaxed">
-            We do not just practice law; we engineer the frameworks that safeguard global commerce and personal legacies.
+          
+          <p className="max-w-2xl text-sm md:text-base text-[#F7F5F0]/70 font-light leading-relaxed mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+            Harrington and Co serves as the definitive vanguard for elite interests, blending generational wisdom with contemporary strategic rigor.
           </p>
+        </div>
+
+        {/* Minimal Scroll Cue */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
+          <span className="text-[8px] uppercase tracking-[0.5em] text-[#F7F5F0] font-bold">The Legacy</span>
+          <div className="w-[1px] h-12 bg-gradient-to-b from-[#C6A75E] to-transparent"></div>
         </div>
       </section>
 
-      {/* The Harrington Method */}
+      {/* The Harrington Legacy */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -32,23 +49,23 @@ const AboutPage: React.FC = () => {
               <div className="absolute -inset-4 border border-[#C6A75E]/20 rounded-sm -z-10 group-hover:scale-105 transition-transform duration-700"></div>
               <img 
                 src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1200" 
-                alt="Architecture and Design" 
+                alt="Architectural Detail" 
                 className="w-full h-[600px] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute bottom-10 left-10 right-10 p-8 bg-[#0F1E2E]/90 backdrop-blur-md border-l-4 border-[#C6A75E]">
-                <h3 className="text-[#F7F5F0] text-2xl font-bold serif mb-2 italic">"Precision is our primary currency."</h3>
-                <p className="text-[#C6A75E] text-[10px] font-bold uppercase tracking-[0.3em]">HARRINGTON CORE VALUES</p>
+                <h3 className="text-[#F7F5F0] text-2xl font-bold serif mb-2 italic">"Vision is the foundation of every triumph."</h3>
+                <p className="text-[#C6A75E] text-[10px] font-bold uppercase tracking-[0.3em]">HARRINGTON CORE PHILOSOPHY</p>
               </div>
             </div>
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <h2 className="text-4xl font-bold text-[#0F1E2E] serif">Beyond Advocacy: Strategic Engineering</h2>
+                <h2 className="text-4xl font-bold text-[#0F1E2E] serif">A Heritage of Unrivaled Insight</h2>
                 <p className="text-[#4A5568] text-lg font-light leading-relaxed">
-                  Harrington and Co was founded on the belief that traditional legal counsel is no longer sufficient in a hyper-connected, volatile global economy. We operate as <strong>Legal Architects</strong>—mapping risks before they manifest and building resilient structures for growth.
+                  Established on the principle that superior counsel requires more than legal knowledge, Harrington and Co operates as a high-level strategic partner. We don't merely respond to circumstances; we anticipate the variables that define the future.
                 </p>
                 <p className="text-[#4A5568] leading-relaxed">
-                  Our multidisciplinary approach combines deep jurisprudence with technological foresight. We don't just win cases; we eliminate the conditions that create them. From maritime logistics to the frontiers of AI governance, we provide the quiet strength behind the world's most ambitious projects.
+                  Our firm represents a synthesis of classical jurisprudence and forward-looking economic intelligence. Whether securing maritime corridors or architecting complex cross-border acquisitions, we provide the steady hand and sharp intellect required by the world's most ambitious leaders.
                 </p>
               </div>
 
@@ -67,77 +84,80 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* NEW: Proven Track Record */}
+      {/* Track Record */}
       <TrackRecord />
 
-      {/* The Three Pillars */}
-      <section className="py-24 bg-[#0F1E2E]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl text-[#F7F5F0] font-bold serif mb-6">Our Foundational Tenets</h2>
-            <p className="text-[#F7F5F0]/50 max-w-2xl mx-auto font-light">The constants that define our engagement with every client, regardless of the scale of the brief.</p>
+      {/* The Strategic Mandate: Mission, Vision, Values (Non-card design) */}
+      <section className="py-32 bg-[#0F1E2E] relative overflow-hidden">
+        {/* Background Accent */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-[#C6A75E]/[0.02] pointer-events-none"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mb-24">
+            <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Our Strategic Mandate</span>
+            <h2 className="text-4xl md:text-6xl text-[#F7F5F0] font-bold serif leading-tight">Engineering the Future of Advocacy.</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {[
-              { 
-                icon: <Compass className="w-10 h-10" />, 
-                title: 'Strategic Forethought', 
-                desc: 'We evaluate the legal landscape across decades, not quarters, ensuring our clients’ legacies are fortified against future shifts.' 
-              },
-              { 
-                icon: <Layers className="w-10 h-10" />, 
-                title: 'Unrivaled Precision', 
-                desc: 'In the details lies the difference between a contract and a shield. We execute with a standard of meticulousness that borders on the absolute.' 
-              },
-              { 
-                icon: <ShieldCheck className="w-10 h-10" />, 
-                title: 'Absolute Discretion', 
-                desc: 'Privacy is the ultimate luxury. We maintain a fortress of confidentiality for the high-stakes interests we represent.' 
-              }
-            ].map((pillar, i) => (
-              <div key={i} className="bg-white/5 p-12 border border-white/10 group hover:border-[#C6A75E]/40 transition-all duration-500">
-                <div className="text-[#C6A75E] mb-8 group-hover:scale-110 transition-transform duration-500">{pillar.icon}</div>
-                <h3 className="text-[#F7F5F0] text-2xl font-bold serif mb-6">{pillar.title}</h3>
-                <p className="text-[#F7F5F0]/40 text-sm font-light leading-relaxed">{pillar.desc}</p>
+          <div className="space-y-32 relative">
+            {/* Connecting Line */}
+            <div className="absolute left-[39px] top-10 bottom-10 w-[1px] bg-gradient-to-b from-[#C6A75E] via-[#C6A75E]/20 to-transparent hidden md:block"></div>
+
+            {/* Mission */}
+            <div className="relative md:pl-24 group">
+              <div className="absolute left-0 top-0 hidden md:flex items-center justify-center w-20 h-20 bg-[#0F1E2E] border border-[#C6A75E]/30 rounded-full z-20 group-hover:border-[#C6A75E] transition-colors duration-500">
+                <Target className="text-[#C6A75E] w-8 h-8" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-[#C6A75E] font-bold tracking-[0.3em] uppercase text-xs mb-4 block">The Counsel</span>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0F1E2E] serif leading-tight">Elite Representation <br /> Across Continents.</h2>
+              <div className="absolute -left-10 top-[-40px] opacity-[0.03] text-[12rem] font-serif text-[#C6A75E] pointer-events-none select-none">M</div>
+              <div className="max-w-4xl">
+                <h3 className="text-[#C6A75E] text-xs font-bold uppercase tracking-[0.5em] mb-4">The Mission</h3>
+                <h4 className="text-3xl md:text-4xl text-[#F7F5F0] font-bold serif mb-8 leading-snug">To engineer elite legal frameworks that safeguard the global interests and multi-generational legacies of the world's most ambitious enterprises.</h4>
+                <p className="text-[#F7F5F0]/40 text-lg font-light leading-relaxed">
+                  Our mission is rooted in the belief that legal counsel should be a catalyst for growth, not just a response to risk. We provide the architecture for success in an increasingly complex global marketplace.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {LAWYERS.map((lawyer) => (
-              <div key={lawyer.id} className="group">
-                <div className="relative overflow-hidden mb-8 aspect-[4/5] bg-slate-100 shadow-2xl transition-all duration-700">
-                  <img 
-                    src={lawyer.imageUrl} 
-                    alt={lawyer.name} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-[#0F1E2E]/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-6">
-                    <Linkedin size={20} className="text-[#F7F5F0] hover:text-[#C6A75E] cursor-pointer transition-colors" />
-                    <Twitter size={20} className="text-[#F7F5F0] hover:text-[#C6A75E] cursor-pointer transition-colors" />
-                    <Instagram size={20} className="text-[#F7F5F0] hover:text-[#C6A75E] cursor-pointer transition-colors" />
+            {/* Vision */}
+            <div className="relative md:pl-24 group">
+              <div className="absolute left-0 top-0 hidden md:flex items-center justify-center w-20 h-20 bg-[#0F1E2E] border border-[#C6A75E]/30 rounded-full z-20 group-hover:border-[#C6A75E] transition-colors duration-500">
+                <Eye className="text-[#C6A75E] w-8 h-8" />
+              </div>
+              <div className="absolute -left-10 top-[-40px] opacity-[0.03] text-[12rem] font-serif text-[#C6A75E] pointer-events-none select-none">V</div>
+              <div className="max-w-4xl">
+                <h3 className="text-[#C6A75E] text-xs font-bold uppercase tracking-[0.5em] mb-4">The Vision</h3>
+                <h4 className="text-3xl md:text-4xl text-[#F7F5F0] font-bold serif mb-8 leading-snug">To remain the definitive vanguard of sophisticated advocacy, setting the benchmark for strategic foresight across 24+ global jurisdictions.</h4>
+                <p className="text-[#F7F5F0]/40 text-lg font-light leading-relaxed">
+                  We envision a future where Harrington and Co is synonymous with the highest level of intellectual rigor, serving as the trusted advisor to the global commercial elite.
+                </p>
+              </div>
+            </div>
+
+            {/* Core Values */}
+            <div className="relative md:pl-24 group">
+              <div className="absolute left-0 top-0 hidden md:flex items-center justify-center w-20 h-20 bg-[#0F1E2E] border border-[#C6A75E]/30 rounded-full z-20 group-hover:border-[#C6A75E] transition-colors duration-500">
+                <Gem className="text-[#C6A75E] w-8 h-8" />
+              </div>
+              <div className="absolute -left-10 top-[-40px] opacity-[0.03] text-[12rem] font-serif text-[#C6A75E] pointer-events-none select-none">V</div>
+              <div className="max-w-4xl">
+                <h3 className="text-[#C6A75E] text-xs font-bold uppercase tracking-[0.5em] mb-4">Core Values</h3>
+                <h4 className="text-3xl md:text-4xl text-[#F7F5F0] font-bold serif mb-12">Foundational Integrity. <br /> Absolute Precision.</h4>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                  <div className="space-y-4">
+                    <h5 className="text-[#F7F5F0] font-bold serif text-xl">Integrity</h5>
+                    <p className="text-[#F7F5F0]/40 text-sm font-light leading-relaxed">Unwavering ethical alignment in high-stakes environments, ensuring our counsel is as honorable as it is effective.</p>
+                  </div>
+                  <div className="space-y-4">
+                    <h5 className="text-[#F7F5F0] font-bold serif text-xl">Intellectual Rigor</h5>
+                    <p className="text-[#F7F5F0]/40 text-sm font-light leading-relaxed">Deep analytical exploration of every brief, leaving no variable unexamined in our pursuit of the optimal outcome.</p>
+                  </div>
+                  <div className="space-y-4">
+                    <h5 className="text-[#F7F5F0] font-bold serif text-xl">Absolute Discretion</h5>
+                    <p className="text-[#F7F5F0]/40 text-sm font-light leading-relaxed">The sanctuary of our clients' affairs is absolute. We maintain an impenetrable environment for sensitive interests.</p>
                   </div>
                 </div>
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-[#0F1E2E] serif mb-2">{lawyer.name}</h3>
-                  <p className="text-[#C6A75E] font-bold text-[10px] uppercase tracking-[0.3em] mb-3">{lawyer.role}</p>
-                  <div className="w-8 h-0.5 bg-slate-200 mx-auto"></div>
-                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-
 import { PracticeArea, Testimonial, BlogPost } from './types';
 
 export const NAV_LINKS = [
@@ -13,6 +12,7 @@ export interface Lawyer {
   id: string;
   name: string;
   role: string;
+  expertise: string;
   phone: string;
   imageUrl: string;
 }
@@ -22,6 +22,7 @@ export const LAWYERS: Lawyer[] = [
     id: '1',
     name: 'Oluwatoyin Adebayo',
     role: 'Managing Partner',
+    expertise: 'Corporate Law & Strategic M&A',
     phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
   },
@@ -29,6 +30,7 @@ export const LAWYERS: Lawyer[] = [
     id: '2',
     name: 'Chukwuma Okoro',
     role: 'Senior Partner',
+    expertise: 'Maritime Law & Global Trade',
     phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
   },
@@ -36,6 +38,7 @@ export const LAWYERS: Lawyer[] = [
     id: '3',
     name: 'Amina Yusuf',
     role: 'Partner',
+    expertise: 'Digital Sovereignty & IP',
     phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
   }
@@ -129,5 +132,40 @@ export const BLOG_POSTS: BlogPost[] = [
     author: 'IP Specialist',
     category: 'Intellectual Property',
     imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800',
+  }
+];
+
+export const FAQ_ITEMS = [
+  {
+    question: "Does the firm handle international arbitration?",
+    answer: "Yes. Our Alternative Dispute Resolution team has represented domestic and international clients in high-stakes arbitrations across London, Paris, and Dubai jurisdictions, specialized in complex commercial and maritime treaties."
+  },
+  {
+    question: "What is the typical response time for urgent maritime matters?",
+    answer: "We operate an emergency response protocol for shipping and maritime emergencies. Clients have 24/7 access to specialized partners for arrest of vessels, collisions, or salvage inquiries, typically initiating within 60 minutes of contact."
+  },
+  {
+    question: "Do you offer specialized counsel for tech startups in the Fintech sector?",
+    answer: "Absolutely. Our 'Digital Sovereignty' practice group focuses on Nigerian Fintech regulations, CBN compliance, data privacy, and intellectual property protection for high-growth African technology ventures."
+  },
+  {
+    question: "How does the firm calculate professional fees?",
+    answer: "We utilize a transparent billing model tailored to the engagement. This typically involves hourly rates for advisory, fixed fees for specific transactions (like incorporation or filings), or performance-based retainers for long-term representation."
+  },
+  {
+    question: "How is client confidentiality maintained?",
+    answer: "Privacy is paramount. We employ military-grade encryption for all digital correspondence and maintain strict physical security protocols at our offices. All client data is handled in strict accordance with the Nigerian Data Protection Act."
+  },
+  {
+    question: "Do you provide legal services outside of Nigeria?",
+    answer: "Through our established network of associate firms across 24+ jurisdictions, including major financial hubs like London and Dubai, we provide synchronized legal auditing and cross-border representation for international entities."
+  },
+  {
+    question: "Can I book a same-day initial consultation?",
+    answer: "Availability depends on the priority level of the matter. Urgent commercial or maritime briefs are prioritized, while general inquiries are typically scheduled within 24 to 48 hours."
+  },
+  {
+    question: "What documents do I need to prepare for a first meeting?",
+    answer: "For corporate clients, we recommend providing relevant contracts, incorporation documents, and a summary of the dispute or transaction. For private individuals, valid government identification and any prior legal correspondence related to the matter are required."
   }
 ];

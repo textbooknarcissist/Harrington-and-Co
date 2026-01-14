@@ -3,8 +3,8 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import Testimonials from '../components/Testimonials';
 import ContactSection from '../components/ContactSection';
-import BlogPreview from '../components/BlogPreview';
 import PracticePreview from '../components/PracticePreview';
+import BlogPreview from '../components/BlogPreview';
 import EnterpriseTicker from '../components/EnterpriseTicker';
 import FAQ from '../components/FAQ';
 
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
       <EnterpriseTicker />
       <PracticePreview />
       <BlogPreview />
-      <FAQ />
+      <FAQ limit={1} />
       <ContactSection />
       <Testimonials />
     </>

@@ -26,39 +26,39 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${
       scrolled ? 'bg-[#0F1E2E]/95 backdrop-blur-md shadow-2xl py-3' : 'bg-transparent py-5'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <a href="#/" className="flex items-center space-x-3 group shrink-0">
-            <Logo className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-110" light={true} />
+            <Logo className="w-8 h-8 md:w-9 md:h-9" light={true} />
             <div className="flex flex-col">
-              <span className="text-sm md:text-lg font-bold tracking-[0.2em] text-[#F7F5F0] serif leading-tight uppercase">HARRINGTON</span>
-              <span className="text-[8px] md:text-[9px] tracking-[0.5em] text-[#C6A75E] font-semibold uppercase -mt-0.5 md:-mt-1">AND CO</span>
+              <span className="text-sm md:text-lg font-bold tracking-[0.3em] text-[#F7F5F0] serif leading-tight uppercase">HARRINGTON</span>
+              <span className="text-[7px] md:text-[8px] tracking-[0.6em] text-[#C6A75E] font-bold uppercase -mt-0.5 md:-mt-1 opacity-80">AND CO</span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
+          <div className="hidden md:flex items-center space-x-10">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-[10px] font-bold uppercase tracking-[0.25em] transition-all relative group py-2 ${
-                    active ? 'text-[#C6A75E]' : 'text-[#F7F5F0]/70 hover:text-[#C6A75E]'
+                  className={`text-[9px] font-bold uppercase tracking-[0.3em] transition-all relative group py-2 ${
+                    active ? 'text-[#C6A75E]' : 'text-[#F7F5F0]/60 hover:text-[#C6A75E]'
                   }`}
                 >
                   {link.name}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-[#C6A75E] transition-all duration-300 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                  <span className={`absolute bottom-0 left-0 h-[1px] bg-[#C6A75E] transition-all duration-500 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                 </a>
               );
             })}
             <a
               href="#/contact"
-              className="px-5 py-2 lg:px-6 lg:py-2.5 border border-[#C6A75E] text-[#C6A75E] text-[10px] font-bold uppercase tracking-widest hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-300 whitespace-nowrap"
+              className="px-6 py-2 border border-[#C6A75E] text-[#C6A75E] text-[9px] font-bold uppercase tracking-[0.3em] hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-500 whitespace-nowrap"
             >
               Consultation
             </a>
@@ -67,63 +67,71 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
           {/* Mobile Toggle Button */}
           <div className="md:hidden flex items-center">
             <button 
-              onClick={() => setIsOpen(!isOpen)} 
+              onClick={() => setIsOpen(true)} 
               className="text-[#F7F5F0] p-2 hover:text-[#C6A75E] transition-colors"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-label="Open menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Redesigned Mobile Sidebar */}
-      <div className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#0F1E2E] z-50 transform transition-transform duration-500 ease-in-out border-l border-[#C6A75E]/20 shadow-[-20px_0_60px_rgba(0,0,0,0.5)] ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
+      {/* COMPACT MOBILE SIDEBAR: Shorter, Narrower, with Blur */}
+      <div className={`fixed top-4 right-4 h-auto w-64 bg-[#0F1E2E]/90 backdrop-blur-xl z-[60] transform transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-[-10px_10px_40px_rgba(0,0,0,0.5)] flex flex-col rounded-2xl border border-white/10 ${
+        isOpen ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-full opacity-0 scale-95 pointer-events-none'
       }`}>
-        <div className="flex flex-col h-full p-8 pt-24">
+        <div className="flex flex-col h-full p-6 pt-16 relative">
           <button 
             onClick={() => setIsOpen(false)} 
-            className="absolute top-8 right-8 text-[#F7F5F0]"
+            className="absolute top-5 right-5 text-[#F7F5F0]/60 hover:text-[#C6A75E] transition-colors"
             aria-label="Close menu"
           >
-            <X className="w-8 h-8" />
+            <X className="w-5 h-5" />
           </button>
           
-          <div className="flex flex-col space-y-6">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`text-xl font-bold serif tracking-wider py-2 border-b border-white/5 transition-colors ${isActive(link.href) ? 'text-[#C6A75E] border-[#C6A75E]/20' : 'text-[#F7F5F0]'}`}
-              >
-                {link.name}
-              </a>
-            ))}
+          <div className="flex flex-col space-y-1">
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`text-[9px] font-bold uppercase tracking-[0.2em] py-4 px-4 transition-all rounded-lg border-l-2 ${
+                    active 
+                      ? 'text-[#C6A75E] border-[#C6A75E] bg-white/5' 
+                      : 'text-[#F7F5F0]/70 border-transparent hover:text-[#C6A75E] hover:bg-white/5'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
+            
             <a
               href="#/contact"
               onClick={() => setIsOpen(false)}
-              className="mt-8 px-6 py-4 bg-[#C6A75E] text-[#0F1E2E] font-bold uppercase tracking-widest text-center text-xs"
+              className="mt-4 px-4 py-4 bg-[#C6A75E] text-[#0F1E2E] font-bold uppercase tracking-[0.2em] text-center text-[9px] hover:bg-[#F7F5F0] transition-colors rounded-lg"
             >
-              Book Consultation
+              Consultation
             </a>
           </div>
 
-          <div className="mt-auto pb-8">
-            <p className="text-[10px] text-white/30 tracking-[0.3em] uppercase mb-4">Harrington and Co</p>
-            <div className="w-12 h-0.5 bg-[#C6A75E]"></div>
+          <div className="mt-8 pb-2 text-center">
+            <Logo className="w-6 h-6 mx-auto mb-2 opacity-30" light={true} />
+            <p className="text-[6px] text-white/20 tracking-[0.4em] uppercase">Private Advisory</p>
           </div>
         </div>
       </div>
       
       {/* Overlay Backdrop */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden z-40 transition-opacity" 
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )}
+      <div 
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm md:hidden z-[55] transition-opacity duration-500 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`} 
+        onClick={() => setIsOpen(false)}
+      ></div>
     </nav>
   );
 };
