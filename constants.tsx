@@ -1,11 +1,10 @@
-
 import { PracticeArea, Testimonial, BlogPost } from './types';
 
 export const NAV_LINKS = [
   { name: 'Home', href: '#/' },
-  { name: 'About', href: '#/about' },
-  { name: 'Practice', href: '#/practice' },
-  { name: 'Blog', href: '#/blog' },
+  { name: 'About Us', href: '#/about' },
+  { name: 'Practice Areas', href: '#/practice' },
+  { name: 'Resources', href: '#/blog' },
   { name: 'Contact', href: '#/contact' },
 ];
 

@@ -12,7 +12,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,21 +26,21 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${
-      scrolled ? 'bg-[#0F1E2E]/90 backdrop-blur-md shadow-2xl py-3' : 'bg-transparent py-6'
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-[#0F1E2E]/95 backdrop-blur-md shadow-2xl py-3' : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <a href="#/" className="flex items-center space-x-3 group">
-            <Logo className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" light={true} />
+        <div className="flex justify-between items-center h-16">
+          <a href="#/" className="flex items-center space-x-3 group shrink-0">
+            <Logo className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-110" light={true} />
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-[0.2em] text-[#F7F5F0] serif leading-tight uppercase">HARRINGTON</span>
-              <span className="text-[9px] tracking-[0.5em] text-[#C6A75E] font-semibold uppercase -mt-1">AND CO</span>
+              <span className="text-sm md:text-lg font-bold tracking-[0.2em] text-[#F7F5F0] serif leading-tight uppercase">HARRINGTON</span>
+              <span className="text-[8px] md:text-[9px] tracking-[0.5em] text-[#C6A75E] font-semibold uppercase -mt-0.5 md:-mt-1">AND CO</span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
             {NAV_LINKS.map((link) => {
               const active = isActive(link.href);
               return (
@@ -56,30 +58,30 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
             })}
             <a
               href="#/contact"
-              className="px-6 py-2 border border-[#C6A75E] text-[#C6A75E] text-[10px] font-bold uppercase tracking-widest hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-300"
+              className="px-5 py-2 lg:px-6 lg:py-2.5 border border-[#C6A75E] text-[#C6A75E] text-[10px] font-bold uppercase tracking-widest hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-300 whitespace-nowrap"
             >
               Consultation
             </a>
           </div>
 
-          {/* Mobile Button */}
-          <div className="md:hidden">
+          {/* Mobile Toggle Button */}
+          <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="text-white p-2"
+              className="text-[#F7F5F0] p-2 hover:text-[#C6A75E] transition-colors"
               aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-              {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-[#0F1E2E]/98 backdrop-blur-xl z-40 transition-transform duration-500 ease-in-out md:hidden ${
+      {/* Redesigned Mobile Sidebar */}
+      <div className={`fixed top-0 right-0 h-full w-[85%] max-w-sm bg-[#0F1E2E] z-50 transform transition-transform duration-500 ease-in-out border-l border-[#C6A75E]/20 shadow-[-20px_0_60px_rgba(0,0,0,0.5)] ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        <div className="flex flex-col h-full items-center justify-center space-y-8">
+        <div className="flex flex-col h-full p-8 pt-24">
           <button 
             onClick={() => setIsOpen(false)} 
             className="absolute top-8 right-8 text-[#F7F5F0]"
@@ -87,25 +89,41 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '#/' }) => {
           >
             <X className="w-8 h-8" />
           </button>
-          {NAV_LINKS.map((link) => (
+          
+          <div className="flex flex-col space-y-6">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-xl font-bold serif tracking-wider py-2 border-b border-white/5 transition-colors ${isActive(link.href) ? 'text-[#C6A75E] border-[#C6A75E]/20' : 'text-[#F7F5F0]'}`}
+              >
+                {link.name}
+              </a>
+            ))}
             <a
-              key={link.name}
-              href={link.href}
+              href="#/contact"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl font-bold serif transition-colors ${isActive(link.href) ? 'text-[#C6A75E]' : 'text-[#F7F5F0]'}`}
+              className="mt-8 px-6 py-4 bg-[#C6A75E] text-[#0F1E2E] font-bold uppercase tracking-widest text-center text-xs"
             >
-              {link.name}
+              Book Consultation
             </a>
-          ))}
-          <a
-            href="#/contact"
-            onClick={() => setIsOpen(false)}
-            className="px-10 py-4 bg-[#C6A75E] text-[#0F1E2E] font-bold uppercase tracking-widest text-sm"
-          >
-            Book Consultation
-          </a>
+          </div>
+
+          <div className="mt-auto pb-8">
+            <p className="text-[10px] text-white/30 tracking-[0.3em] uppercase mb-4">Harrington and Co</p>
+            <div className="w-12 h-0.5 bg-[#C6A75E]"></div>
+          </div>
         </div>
       </div>
+      
+      {/* Overlay Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden z-40 transition-opacity" 
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
     </nav>
   );
 };

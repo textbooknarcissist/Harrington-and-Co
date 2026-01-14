@@ -13,7 +13,7 @@ const BlogPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">The Briefing</span>
           <h1 className="text-5xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
-            Legal Insights.
+            Resources.
           </h1>
           <div className="w-24 h-1 bg-[#C6A75E] mb-8 mx-auto"></div>
           <p className="max-w-2xl text-xl text-[#F7F5F0]/70 font-light leading-relaxed mx-auto">

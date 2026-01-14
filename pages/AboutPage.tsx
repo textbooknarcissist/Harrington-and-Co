@@ -12,7 +12,7 @@ const AboutPage: React.FC = () => {
           <Logo className="w-[600px] h-[600px]" light={true} />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left">
-          <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Our Philosophy</span>
+          <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">About Us</span>
           <h1 className="text-5xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
             The Architecture <br /> of Justice.
           </h1>

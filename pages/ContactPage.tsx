@@ -12,28 +12,30 @@ const ContactPage: React.FC = () => {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="text-[#C6A75E] font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Direct Access</span>
-          <h1 className="text-5xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
+          <h1 className="text-4xl md:text-7xl font-bold text-[#F7F5F0] mb-8 serif leading-tight">
             Consult the Firm.
           </h1>
           <div className="w-24 h-1 bg-[#C6A75E] mb-8 mx-auto"></div>
-          <p className="max-w-2xl text-xl text-[#F7F5F0]/70 font-light leading-relaxed mx-auto">
+          <p className="max-w-2xl text-lg md:text-xl text-[#F7F5F0]/70 font-light leading-relaxed mx-auto">
             We respond to elite inquiries with the urgency and discretion they command.
           </p>
         </div>
       </section>
 
+      {/* This component is now Dark bg */}
       <ContactSection />
       
-      {/* Aesthetic Map Placeholder */}
-      <div className="w-full h-[500px] bg-slate-200 relative grayscale group overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center bg-[#0F1E2E]/5 backdrop-blur-sm transition-all group-hover:backdrop-blur-none">
-          <div className="text-center px-4 bg-white/90 p-12 border border-[#C6A75E]/20 shadow-2xl">
-            <h3 className="text-2xl font-bold text-[#0F1E2E] mb-4 serif uppercase tracking-widest">Global Headquarters</h3>
-            <p className="text-[#C6A75E] font-bold text-sm tracking-widest mb-6">LAGOS • LONDON • DUBAI</p>
-            <p className="text-slate-500 font-light">Harrington House, Financial District, Lagos</p>
-            <div className="mt-8 flex justify-center space-x-4">
-               <div className="w-2 h-2 rounded-full bg-[#C6A75E] animate-pulse"></div>
-               <span className="text-[10px] font-bold uppercase tracking-widest text-[#0F1E2E]">Active Deployment</span>
+      {/* Dark Map Section */}
+      <div className="w-full h-[500px] bg-[#0F1E2E] relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center grayscale"></div>
+        <div className="absolute inset-0 flex items-center justify-center backdrop-blur-[2px]">
+          <div className="text-center px-6 bg-[#F7F5F0] p-10 md:p-16 border border-[#C6A75E]/30 shadow-[0_50px_100px_rgba(0,0,0,0.4)]">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0F1E2E] mb-4 serif uppercase tracking-widest">Global Presence</h3>
+            <p className="text-[#C6A75E] font-bold text-[10px] md:text-xs tracking-[0.4em] mb-8 uppercase">LAGOS • LONDON • DUBAI</p>
+            <p className="text-slate-500 font-light max-w-xs mx-auto text-sm">Harrington House, Financial District, Lagos. Secure deployment across 24+ jurisdictions.</p>
+            <div className="mt-8 flex justify-center items-center space-x-4">
+               <div className="w-2 h-2 rounded-full bg-[#C6A75E] animate-ping"></div>
+               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0F1E2E]">Operational Network Live</span>
             </div>
           </div>
         </div>
