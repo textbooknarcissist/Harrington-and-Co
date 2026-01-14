@@ -2,6 +2,7 @@ import React from 'react';
 import { ShieldCheck, Compass, Layers, Landmark, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { LAWYERS } from '../constants';
 import Logo from '../components/Logo';
+import TrackRecord from '../components/TrackRecord';
 
 const AboutPage: React.FC = () => {
   return (
@@ -65,6 +66,9 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* NEW: Proven Track Record */}
+      <TrackRecord />
 
       {/* The Three Pillars */}
       <section className="py-24 bg-[#0F1E2E]">

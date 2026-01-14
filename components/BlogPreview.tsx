@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BLOG_POSTS } from '../constants';
 import { ArrowUpRight } from 'lucide-react';
@@ -23,7 +24,7 @@ const BlogPreview: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {BLOG_POSTS.map((post) => (
-            <article key={post.id} className="group cursor-pointer">
+            <article key={post.id} className="group cursor-pointer p-6 border border-white/10 hover:border-[#C6A75E]/50 transition-all duration-500 bg-white/5">
               <div className="overflow-hidden mb-8 aspect-video bg-white/5 relative">
                 <img
                   src={post.imageUrl}

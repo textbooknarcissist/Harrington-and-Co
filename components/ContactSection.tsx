@@ -54,13 +54,16 @@ const ContactSection: React.FC = () => {
 
           <div className="bg-[#F7F5F0] p-8 md:p-12 rounded-sm shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#C6A75E]/5 rounded-bl-full -z-0"></div>
-            <form className="space-y-6 relative z-10">
+            <form className="space-y-6 relative z-10" action="#" method="POST">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="first-name" className="block text-xs font-bold text-[#0F1E2E] mb-2 uppercase tracking-widest">First Name</label>
                   <input
                     type="text"
                     id="first-name"
+                    name="first-name"
+                    autoComplete="given-name"
+                    required
                     className="w-full px-5 py-4 bg-white border border-slate-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#C6A75E] transition-all"
                     placeholder="Jane"
                   />
@@ -70,6 +73,9 @@ const ContactSection: React.FC = () => {
                   <input
                     type="text"
                     id="last-name"
+                    name="last-name"
+                    autoComplete="family-name"
+                    required
                     className="w-full px-5 py-4 bg-white border border-slate-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#C6A75E] transition-all"
                     placeholder="Doe"
                   />
@@ -80,6 +86,9 @@ const ContactSection: React.FC = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  autoComplete="email"
+                  required
                   className="w-full px-5 py-4 bg-white border border-slate-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#C6A75E] transition-all"
                   placeholder="jane.doe@example.com"
                 />
@@ -88,6 +97,8 @@ const ContactSection: React.FC = () => {
                 <label htmlFor="message" className="block text-xs font-bold text-[#0F1E2E] mb-2 uppercase tracking-widest">Nature of Inquiry</label>
                 <textarea
                   id="message"
+                  name="message"
+                  required
                   rows={4}
                   className="w-full px-5 py-4 bg-white border border-slate-200 rounded-sm focus:outline-none focus:ring-1 focus:ring-[#C6A75E] transition-all"
                   placeholder="Summarize your requirements..."
@@ -95,7 +106,7 @@ const ContactSection: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-5 bg-[#0F1E2E] text-white font-bold rounded-sm hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-300 tracking-[0.2em] uppercase text-xs"
+                className="w-full py-5 bg-[#0F1E2E] text-white font-bold rounded-sm hover:bg-[#C6A75E] hover:text-[#0F1E2E] transition-all duration-300 tracking-[0.2em] uppercase text-xs shadow-lg"
               >
                 Request Appointment
               </button>

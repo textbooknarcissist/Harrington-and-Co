@@ -31,7 +31,7 @@ const PracticePreview: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-16">
           {previewAreas.map((area, idx) => (
-            <div key={idx} className="p-10 border border-[#0F1E2E]/10 bg-white hover:border-[#C6A75E]/50 transition-all duration-500 group shadow-sm hover:shadow-xl">
+            <div key={idx} className="p-10 border border-[#0F1E2E]/15 bg-white hover:border-[#C6A75E]/50 transition-all duration-500 group shadow-sm hover:shadow-xl">
               <div className="mb-8 text-[#C6A75E] group-hover:scale-110 transition-transform duration-500 origin-left">
                 {area.icon}
               </div>

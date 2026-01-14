@@ -49,14 +49,17 @@ const Footer: React.FC = () => {
           <div className="lg:pl-10">
             <h3 className="text-lg font-bold serif mb-8 tracking-widest text-[#C6A75E] uppercase">Quick Access</h3>
             <ul className="space-y-4">
-              {['Home', 'About', 'Practice', 'Blog', 'Contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#/${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`} className="text-sm text-[#F7F5F0]/50 hover:text-[#C6A75E] hover:pl-2 transition-all duration-300 flex items-center group">
-                    <span className="w-1.5 h-1.5 bg-[#C6A75E]/40 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {['Home', 'About Us', 'Practice Areas', 'Resources', 'Contact'].map((item) => {
+                const href = item === 'Home' ? '#/' : `#/${item.toLowerCase().replace(' ', '')}`;
+                return (
+                  <li key={item}>
+                    <a href={href} className="text-sm text-[#F7F5F0]/50 hover:text-[#C6A75E] hover:pl-2 transition-all duration-300 flex items-center group">
+                      <span className="w-1.5 h-1.5 bg-[#C6A75E]/40 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                      {item}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -100,21 +103,19 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar: Copyright (Left) Associations (Right) */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left">
-            <p className="text-[10px] text-white/30 uppercase tracking-[0.4em] font-bold">
-              Harrington and Co
-            </p>
-            <div className="flex gap-6 text-[10px] text-white/20 uppercase tracking-widest">
+          <p className="text-[10px] text-white/30 uppercase tracking-widest font-light order-2 md:order-1">
+            © 2026 Harrington and Co. All Rights Reserved.
+          </p>
+          
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12 text-center md:text-left order-1 md:order-2">
+            <div className="flex gap-6 text-[10px] text-white/20 uppercase tracking-[0.3em] font-bold">
               <span>NGA Bar Association</span>
               <span>•</span>
               <span>Intl Legal Counsel</span>
             </div>
           </div>
-          <p className="text-[10px] text-white/30 uppercase tracking-widest font-light">
-            © {new Date().getFullYear()} All Rights Reserved.
-          </p>
         </div>
       </div>
     </footer>

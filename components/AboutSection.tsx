@@ -2,16 +2,16 @@ import React from 'react';
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="py-20 md:py-32 bg-[#F7F5F0] overflow-hidden">
+    <section className="py-20 md:py-32 bg-[#F7F5F0] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="absolute -top-10 -left-10 w-24 md:w-40 h-24 md:h-40 bg-[#C6A75E]/5 rounded-full -z-10"></div>
-            <div className="relative z-10">
+            <div className="relative z-10 group">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
-                alt="Our legal team"
-                className="w-full h-[400px] md:h-[600px] object-cover rounded-sm shadow-[0_35px_60px_-15px_rgba(15,30,46,0.3)] grayscale group-hover:grayscale-0 transition-all duration-1000"
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200"
+                alt="Modern Legal Excellence"
+                className="w-full h-[400px] md:h-[600px] object-cover rounded-sm shadow-[0_35px_60px_-15px_rgba(15,30,46,0.2)] transition-all duration-1000"
               />
               <div className="absolute -bottom-6 -right-6 p-6 md:p-10 bg-[#0F1E2E] border-l-4 border-[#C6A75E] shadow-2xl hidden md:block">
                 <p className="text-[#F7F5F0] text-lg font-bold serif italic mb-2">Excellence in practice.</p>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Logo from './Logo';
 
@@ -37,15 +36,20 @@ const Newsletter: React.FC = () => {
               <h3 className="text-3xl font-bold text-[#F7F5F0] serif mb-3">Stay Informed</h3>
               <p className="text-[#F7F5F0]/50 text-sm font-light">Join our inner circle for exclusive legal briefs, regulatory updates, and firm insights.</p>
             </div>
-            <form className="flex flex-col sm:flex-row gap-4">
+            <form className="flex flex-col sm:flex-row gap-4" action="#" method="POST">
               <div className="flex-grow relative">
+                <label htmlFor="newsletter-email" className="sr-only">Professional email address</label>
                 <input
                   type="email"
+                  id="newsletter-email"
+                  name="newsletter-email"
+                  autoComplete="email"
+                  required
                   placeholder="Professional email address"
                   className="w-full px-6 py-4 bg-white/10 border border-white/10 text-white focus:outline-none focus:border-[#C6A75E] placeholder:text-white/30 transition-all font-light"
                 />
               </div>
-              <button className="bg-[#C6A75E] text-[#0F1E2E] px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#F7F5F0] transition-all duration-300 shadow-xl">
+              <button type="submit" className="bg-[#C6A75E] text-[#0F1E2E] px-10 py-4 font-bold uppercase tracking-[0.2em] text-xs hover:bg-[#F7F5F0] transition-all duration-300 shadow-xl">
                 Subscribe
               </button>
             </form>

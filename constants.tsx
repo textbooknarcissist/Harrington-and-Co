@@ -1,3 +1,4 @@
+
 import { PracticeArea, Testimonial, BlogPost } from './types';
 
 export const NAV_LINKS = [
@@ -19,24 +20,24 @@ export interface Lawyer {
 export const LAWYERS: Lawyer[] = [
   {
     id: '1',
-    name: 'Emuobonuvie Udi',
-    role: 'Partner',
+    name: 'Oluwatoyin Adebayo',
+    role: 'Managing Partner',
     phone: '09065624016',
     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
   },
   {
     id: '2',
-    name: 'Favour Nwadibie',
-    role: 'Partner',
+    name: 'Chukwuma Okoro',
+    role: 'Senior Partner',
     phone: '09065624016',
-    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
   },
   {
     id: '3',
-    name: 'Gilbert Origbu',
-    role: 'Managing Partner',
+    name: 'Amina Yusuf',
+    role: 'Partner',
     phone: '09065624016',
-    imageUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
+    imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
   }
 ];
 
